@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com" ></script>
+    <title>HTMX-polling</title>
+</head>
+<body class="bg-blue-900 ">
+    <div class="container mx-auto py-8 max-w-lg">
+        <div class="bg-gray-900 text-white p-4 border border-gray-600 rounded-lg max-w-lg m-auto">
+            <form action="">
+                <h1 class="text-xl mb-4">Search Contacts</h1>
+                <input 
+                type="search" 
+                name="search" 
+                id="search" 
+                class="border border-gray-600 bg-gray-800 rounded-lg w-full mb-5" 
+                placeholder="Type for your contacts"
+                hx-post="/search"
+                hx-trigger="input changed delay:500ms,search"
+                hx-target="#search-res"
+                >
+                <table class="mim-w-full devide-y devide-gray-200">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
+                                Email
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="search-res" class="devide-y devide-gray-600">
+                            
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

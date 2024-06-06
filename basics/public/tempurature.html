@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com" ></script>
+    <title>HTMX-polling</title>
+</head>
+<body class="bg-blue-900 text-white min-h-screen flex items-center justify-center">
+    <div class="text-center">
+        <h1 class="text-xl mb-4">Weather in Your Area</h1>
+        <span class="" hx-get="/get-current-temp" hx-trigger="every 5s">Loading....</span>
+    </div>
+</body>
+</html>
